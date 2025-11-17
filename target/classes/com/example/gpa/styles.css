@@ -1,0 +1,5 @@
+/* Simple styles for GPA Calculator */
+.header { -fx-background-color: linear-gradient(#4a90e2, #357ABD); -fx-padding: 12px; -fx-text-fill: white; }
+Button { -fx-cursor: hand; }
+Button:hover { -fx-opacity: 0.9; }
+TableView { -fx-border-color: #ddd; }

@@ -1,0 +1,16 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="MainApp" type="Application" factoryName="Application">
+    <option name="MAIN_CLASS_NAME" value="com.example.gpa.MainApp" />
+    <module name="gpa-calculator" />
+    <option name="VM_PARAMETERS" value="--module-path &quot;${MAVEN_REPOSITORY}/org/openjfx/javafx-controls/22.0.2;${MAVEN_REPOSITORY}/org/openjfx/javafx-graphics/22.0.2;${MAVEN_REPOSITORY}/org/openjfx/javafx-base/22.0.2;${MAVEN_REPOSITORY}/org/openjfx/javafx-fxml/22.0.2&quot; --add-modules javafx.controls,javafx.fxml" />
+    <extension name="coverage">
+      <pattern>
+        <option name="PATTERN" value="com.example.gpa.*" />
+        <option name="ENABLED" value="true" />
+      </pattern>
+    </extension>
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

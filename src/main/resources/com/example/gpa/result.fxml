@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.gpa.controllers.ResultController">
+    <top>
+        <HBox spacing="10" alignment="CENTER_LEFT">
+            <padding><Insets top="10" right="10" bottom="10" left="10"/></padding>
+            <Label text="GPA Result" style="-fx-font-size:18px; -fx-font-weight:bold;"/>
+        </HBox>
+    </top>
+    <center>
+        <VBox spacing="10">
+            <padding><Insets top="10" right="10" bottom="10" left="10"/></padding>
+            <TableView fx:id="resultTable" prefHeight="420">
+                <columns>
+                    <TableColumn fx:id="rName" text="Course Name" prefWidth="360" />
+                    <TableColumn fx:id="rCode" text="Code" prefWidth="120" />
+                    <TableColumn fx:id="rCredit" text="Credit" prefWidth="80" />
+                    <TableColumn fx:id="rGrade" text="Grade" prefWidth="80" />
+                </columns>
+            </TableView>
+            <HBox spacing="10" alignment="CENTER_RIGHT">
+                <Label fx:id="gpaLabel" text="GPA: 0.00" style="-fx-font-size:16px; -fx-font-weight:bold;" />
+            </HBox>
+        </VBox>
+    </center>
+</BorderPane>
