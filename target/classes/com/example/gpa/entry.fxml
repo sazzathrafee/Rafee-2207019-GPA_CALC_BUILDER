@@ -6,6 +6,7 @@
     <top>
         <HBox spacing="10" alignment="CENTER_LEFT">
             <padding><Insets top="10" right="10" bottom="10" left="10"/></padding>
+            <Button text="Home" onAction="#handleGoHome" />
             <Label text="GPA Calculator - Add Courses" style="-fx-font-size:18px; -fx-font-weight:bold;"/>
             <Region HBox.hgrow="ALWAYS" />
             <Label text="Target Credits:"/>

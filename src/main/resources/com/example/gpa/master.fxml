@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.gpa.controllers.MasterController"
+            prefHeight="650" prefWidth="1000" styleClass="root">
+    
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="10" styleClass="top-bar">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+            <Button text="Home" onAction="#handleGoHome" />
+            <Region HBox.hgrow="ALWAYS" />
+            <Label text="Saved GPA Records" styleClass="title"/>
+            <Region HBox.hgrow="ALWAYS" />
+        </HBox>
+    </top>
+    
+    <center>
+        <VBox spacing="15">
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
+            
+            <Label text="All Saved GPA Sessions" style="-fx-font-size: 16px; -fx-font-weight: bold;" />
+            
+            <TableView fx:id="masterTable" VBox.vgrow="ALWAYS">
+                <columns>
+                    <TableColumn fx:id="colId" text="ID" prefWidth="50" />
+                    <TableColumn fx:id="colGpa" text="GPA" prefWidth="100" />
+                    <TableColumn fx:id="colCredits" text="Credits" prefWidth="100" />
+                    <TableColumn fx:id="colTimestamp" text="Date &amp; Time" prefWidth="200" />
+                    <TableColumn fx:id="colAction" text="Actions" prefWidth="150" />
+                </columns>
+            </TableView>
+            
+            <Label fx:id="statusLabel" style="-fx-text-fill: #2196F3;" />
+        </VBox>
+    </center>
+</BorderPane>

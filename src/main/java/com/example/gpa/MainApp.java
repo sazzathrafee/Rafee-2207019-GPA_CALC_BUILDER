@@ -1,5 +1,6 @@
 package com.example.gpa;
 
+import com.example.gpa.services.GpaSummaryService;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -10,6 +11,11 @@ public class MainApp extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
+        // Load GPA history from database in background
+        GpaSummaryService.getInstance().loadAllSummaries(() -> {
+            System.out.println("GPA history loaded successfully on startup");
+        });
+        
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/gpa/home.fxml"));
         Parent root = loader.load();
         Scene scene = new Scene(root, 900, 600);
@@ -27,5 +33,12 @@ public class MainApp extends Application {
 
     public static void main(String[] args) {
         launch(args);
+    }
+    
+    @Override
+    public void stop() {
+        // Gracefully shutdown service on app close
+        GpaSummaryService.getInstance().shutdown();
+        System.out.println("Application stopped gracefully");
     }
 }

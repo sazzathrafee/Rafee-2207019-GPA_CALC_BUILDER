@@ -1,6 +1,7 @@
 package com.example.gpa.controllers;
 
 import com.example.gpa.model.Course;
+import com.example.gpa.model.GpaSummary;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -219,5 +220,36 @@ public class EntryController {
         a.setHeaderText(null);
         a.setContentText(text);
         a.showAndWait();
+    }
+    
+    @FXML
+    private void handleGoHome(ActionEvent event) throws IOException {
+        HomeController.loadHome(event);
+    }
+    
+    /**
+     * Load a previous GPA session for editing.
+     * Sets the target credits and populates the course list.
+     * 
+     * @param summary The GPA summary to load
+     * @param loadedCourses The list of courses from the previous session
+     */
+    public void loadPreviousSession(GpaSummary summary, List<Course> loadedCourses) {
+        // Set target credits from the summary
+        targetCreditsField.setText(String.valueOf(summary.getCredits()));
+        
+        // Clear existing courses and add loaded ones
+        courses.clear();
+        courses.addAll(loadedCourses);
+        
+        // Trigger the validation
+        onTargetChanged();
+        
+        // Update the calculate button state
+        updateCalcButton();
+        
+        statusLabel.setText("Loaded session from " + summary.getTimestamp() + 
+                           " - GPA: " + String.format("%.2f", summary.getGpa()) + 
+                           " | " + loadedCourses.size() + " courses loaded. You can edit and recalculate.");
     }
 }

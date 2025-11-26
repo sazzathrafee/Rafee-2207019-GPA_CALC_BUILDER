@@ -17,6 +17,7 @@
     <center>
         <VBox alignment="CENTER" spacing="20">
             <Button fx:id="startButton" onAction="#handleStart" text="Start GPA Calculator" />
+            <Button onAction="#handleLoadPrevious" text="Load Previous Data" />
         </VBox>
     </center>
 </BorderPane>
